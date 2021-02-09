@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    @items = @items.sort_by { |item| item.id }.reverse
   end
 
   def new
